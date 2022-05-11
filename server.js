@@ -13,6 +13,16 @@ server.route({
   },
 });
 
+server.route({
+    method:'GET',
+    path : '/superhero/{heroName}',
+    handler: (request,h)=>
+    {
+        return `<h1>Incrediable ${request.params.heroName}</h1>`
+    }
+
+})
+
 server.start(async(err) => {
   console.log("started..");
   if (err) {
